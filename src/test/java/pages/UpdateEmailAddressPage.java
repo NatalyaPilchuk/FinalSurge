@@ -13,7 +13,7 @@ private By warningMessage=By.cssSelector("[class='alert alert-error']");
     }
     public void changeEmail(){
         driver.findElement(email).clear();
-        driver.findElement(email).sendKeys("natalya_pilchuk_qa15_onl@yopmail.com123");
+        driver.findElement(email).sendKeys("natalya_pilchuk@yopmail.com");
         driver.findElement(password).sendKeys("8692421qweQWE");
         driver.findElement(saveButton).click();
     }
