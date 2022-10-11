@@ -15,6 +15,9 @@ public class FakeMessageGenerator {
         return new Faker().numerify("######");
 
         }
+        public static String generateDescription(){
+        return new Faker().harryPotter().book();
+        }
     public static String generateCity(){
         return new Faker().address().city();}
     public static String generateEmail(){

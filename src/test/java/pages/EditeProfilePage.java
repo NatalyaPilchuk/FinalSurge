@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import utils.FakeMessageGenerator;
 
-public class SettingsPage extends BasePage {
-    private By editProfile = By.xpath("(//span)[4]");
+public class EditeProfilePage extends BasePage {
+
     private By clickHere = By.linkText("click here");
     private By clickFemale = By.cssSelector("[id='female']");
     private By date = By.cssSelector("[id='BDay']");
@@ -17,14 +17,13 @@ public class SettingsPage extends BasePage {
     private By zip=By.cssSelector("[id='Zip']");
     private By getTextName=By.xpath("//div[contains(@class,'span10')]//p[@class='formSep'][1]");
     private By saveButton=By.cssSelector("[id='saveButtonProfile']");
+    private By firstName=By.cssSelector("[id='fname']");
 
-    public SettingsPage(WebDriver driver) {
+    public EditeProfilePage(WebDriver driver) {
         super(driver);
     }
 
-    public void clickEditProfile() {
-        driver.findElement(editProfile).click();
-    }
+
 
     public void clickHere() {
         driver.findElement(clickHere).click();
@@ -35,10 +34,12 @@ public class SettingsPage extends BasePage {
     }
 
     public void inputDate() {
+        driver.findElement(date).clear();
         driver.findElement(date).sendKeys("02/03/1990");
     }
 
     public void inputWeight() {
+        driver.findElement(weight).clear();
         driver.findElement(weight).sendKeys(FakeMessageGenerator.generateWeight());
     }
 
@@ -48,9 +49,11 @@ public class SettingsPage extends BasePage {
         selectOption.selectByIndex(FakeMessageGenerator.generateNumberFromTo());
     }
     public void inputCity(){
+        driver.findElement(city).clear();
         driver.findElement(city).sendKeys(FakeMessageGenerator.generateCity());
     }
     public void inputZip(){
+        driver.findElement(zip).clear();
         driver.findElement(zip).sendKeys(FakeMessageGenerator.generateZipCode());
     }
     public void clickSaveButton(){
@@ -59,6 +62,9 @@ public class SettingsPage extends BasePage {
     public String getText(){
         return driver.findElement(getTextName).getText();
     }
-
+public void updateFirstName(){
+        driver.findElement(firstName).clear();
+        driver.findElement(firstName).sendKeys("Natasha");
+}
 
 }
