@@ -21,7 +21,7 @@ public class RegisterTest extends BaseTest {
         MainPage mainPage = new MainPage(driver);
         LOGGER.info(String.format("Page %s initialized",MainPage.class.getName()));
         LOGGER.info("Check if  logoutButton is displayed");
-        Assert.assertTrue(mainPage.isSignFinalSurgeDisplayed(), "there isn't sign FinalSurge");
+        Assert.assertTrue(mainPage.isLogoutButtonDisplayed(), "there isn't sign FinalSurge");
     }
     @Test(priority = 1,retryAnalyzer = RetryAnalyser.class,description = "user login at FinalSurge with invalid Data")
     public void createAccountWithInvalidData(){
@@ -31,8 +31,8 @@ public class RegisterTest extends BaseTest {
         loginPage.openLoginPage();
         LOGGER.info("Input username and password");
         loginPage.loginToFinalSurgeWithInvalidData();
-        LOGGER.info("Check if  warningMessage is displayed");
-        Assert.assertTrue(loginPage.isWarningMessageDisplayed(),"there is a warning message");
+        LOGGER.info("Check if  warning message is displayed");
+        Assert.assertTrue(loginPage.isWarningMessageDisplayed(),"there isn't a warning message");
     }
 
 

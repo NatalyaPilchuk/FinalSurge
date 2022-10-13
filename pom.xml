@@ -16,7 +16,7 @@
         <github.javafaker.version>1.0.2</github.javafaker.version>
         <github.bonigarcia.version>3.8.1</github.bonigarcia.version>
         <aspectj.version>1.9.7</aspectj.version>
-
+        <suiteXmlFile>src/test/resources/testsuites/RegressionSuite.xml</suiteXmlFile>
     </properties>
     <dependencies>
         <dependency>
@@ -70,7 +70,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${}</suiteXmlFile>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
