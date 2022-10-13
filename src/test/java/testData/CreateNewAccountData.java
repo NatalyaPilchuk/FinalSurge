@@ -4,7 +4,7 @@ import models.CreateNewAccountModel;
 import utils.FakeMessageGenerator;
 
 public class CreateNewAccountData {
-    public static CreateNewAccountModel getValidData(){
+    public static CreateNewAccountModel getValidData() {
         return CreateNewAccountModel
                 .builder()
                 .firstName(FakeMessageGenerator.generateFirstName())

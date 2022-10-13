@@ -37,7 +37,6 @@ public class FakeMessageGenerator {
     }
 
     public static String generateBrand() {
-
         return new Faker().name().firstName();
     }
 

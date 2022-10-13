@@ -1,15 +1,13 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.FakeMessageGenerator;
 
-import java.util.SplittableRandom;
 
 public class CalculatorPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(CalculatorPage.class.getName());
@@ -26,8 +24,9 @@ public class CalculatorPage extends BasePage {
         super(driver);
     }
 
+    @Step("Input Weight")
     public void inputWeight() {
-        LOGGER.info(String.format("Attempt to send weight:%s","30"));
+        LOGGER.info(String.format("Attempt to send weight:%s", "30"));
         WebElement element = driver.findElement(iframeElement);
         driver.switchTo().frame(element);
         WebElement myWeight = driver.findElement(weight);
@@ -35,31 +34,37 @@ public class CalculatorPage extends BasePage {
 
     }
 
+    @Step("Input Height")
     public void inputHeight() {
-        LOGGER.info(String.format("Attempt to send height:%s","30"));
+        LOGGER.info(String.format("Attempt to send height:%s", "30"));
         driver.findElement(height).sendKeys("30");
     }
 
+    @Step("Input Age")
     public void inputAge() {
-        LOGGER.info(String.format("Attempt to send age:%s","30"));
+        LOGGER.info(String.format("Attempt to send age:%s", "30"));
         driver.findElement(age).sendKeys("30");
     }
 
+    @Step("Choose gender")
     public void inputGender() {
-        LOGGER.info(String.format("Attempt to choose gender:%s","female"));
+        LOGGER.info(String.format("Attempt to choose gender:%s", "female"));
         driver.findElement(gender).click();
     }
 
+    @Step("Input Distance")
     public void inputDistance() {
-        LOGGER.info(String.format("Attempt to choose distance:%s",FakeMessageGenerator.generateCaloricDistance()));
+        LOGGER.info(String.format("Attempt to choose distance:%s", FakeMessageGenerator.generateCaloricDistance()));
         driver.findElement(distance).sendKeys(FakeMessageGenerator.generateCaloricDistance());
     }
 
+    @Step("Click calculate button")
     public void clickCalculateButton() {
-        LOGGER.info(String.format("Attempt to click calculate caloric needs button:%s",calculateButton));
+        LOGGER.info(String.format("Attempt to click calculate caloric needs button:%s", calculateButton));
         driver.findElement(calculateButton).click();
     }
 
+    @Step("Calculation of caloric needs is displayed")
     public boolean isGreenMessageDisplayed() {
         LOGGER.info("Attempt to calculate caloric needs message displayed");
         return driver.findElement(greenMessageCaloricNeeds).isDisplayed();

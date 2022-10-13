@@ -5,9 +5,9 @@
     <test name="FinalSurge">
         <classes>
             <class name="tests.RegisterTest"></class>
-            <class name="tests.GearAndRoutesTest"></class>
             <class name="tests.SettingsInputAllFieldsTest"></class>
             <class name="tests.CreateNewAccountTest"></class>
+            <class name="tests.TrainingPlansTest"></class>
         </classes>
     </test>
 </suite>

@@ -15,7 +15,6 @@ public abstract class DriverManager {
     }
 
 
-
     public void setTimeout() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
@@ -27,7 +26,8 @@ public abstract class DriverManager {
     public void quitDriver() {
         driver.quit();
     }
-    public void startMaximise(){
+
+    public void startMaximise() {
         driver.manage().window().maximize();
     }
 

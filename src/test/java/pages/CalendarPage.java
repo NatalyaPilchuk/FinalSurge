@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -26,17 +27,20 @@ public class CalendarPage extends BasePage {
         super(driver);
     }
 
+    @Step("Click add workout")
     public void quickAddClick() {
         LOGGER.info("Attempt to quick add workout");
         driver.findElement(quickAdd).click();
     }
 
+    @Step("Input date")
     public void inputDate() {
         LOGGER.info(String.format("Attempt to send date: %s", "10/11/2022"));
         driver.findElement(date).clear();
         driver.findElement(date).sendKeys("10/11/2022");
     }
 
+    @Step("Choose sport activity")
     public void chooseActivity() {
         LOGGER.info(String.format("Attempt to choose sport activity:%s", FakeMessageGenerator.generateNumberFromTo()));
         WebElement dropdownList = driver.findElement(selectActivity);
@@ -44,33 +48,36 @@ public class CalendarPage extends BasePage {
         selectOption.selectByIndex(FakeMessageGenerator.generateNumberFromTo());
     }
 
+    @Step("Input workout name")
     public void inputWorkoutName() {
         LOGGER.info(String.format("Attempt to send workout name:%s", workoutNameAdd));
         driver.findElement(workoutName).sendKeys(workoutNameAdd);
     }
 
+    @Step("Input workout description")
     public void inputWorkoutDescription() {
         LOGGER.info(String.format("Attempt to send description of workout:%s", FakeMessageGenerator.generateDescription()));
         driver.findElement(workoutDescription).sendKeys(FakeMessageGenerator.generateDescription());
     }
 
-
+    @Step("Click save button")
     public void clickSaveButton() {
         LOGGER.info("Attempt to follow save button");
         driver.findElement(saveButton).click();
     }
 
+    @Step("Change calendar from month to week")
     public void clickWeekButton() {
         LOGGER.info("Attempt to choose week calendar");
         driver.findElement(weekButton).click();
     }
 
-
+    @Step("Input date")
     public String getExpectedWorkoutName() {
-        LOGGER.info(String.format("Attempt to displayed expected workout name",workoutNameAdd));
         return workoutNameAdd;
     }
 
+    @Step("Get actual workout name")
     public String getActualWorkoutName() {
         List<WebElement> workoutList = driver.findElements(workoutNameCalendar);
         int amountElements = workoutList.size();
@@ -80,8 +87,5 @@ public class CalendarPage extends BasePage {
 
     }
 
-    public String getText() {
-        return driver.findElement(workoutName).getText();
-    }
 
 }
