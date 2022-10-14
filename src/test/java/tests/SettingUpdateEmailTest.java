@@ -11,7 +11,7 @@ import utils.RetryAnalyser;
 public class SettingUpdateEmailTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(SettingUpdateEmailTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyser.class, description = "user add 3 digits at the end of email in settings")
+    @Test( description = "user add 3 digits at the end of email in settings")
     @Description("User try to add 3 digits at the end of email in settings")
     public void updateEmailTest() {
         LoginPage loginPage = new LoginPage(driver);
