@@ -21,7 +21,7 @@ public class UpdateEmailAddressPage extends BasePage {
     public void changeEmail() {
         LOGGER.info(String.format("Attempt to send email with '123' at the end:%s", "natalya_pilchuk@yopmail.com123"));
         driver.findElement(email).clear();
-        driver.findElement(email).sendKeys("natalya_pilchuk@yopmail.com");
+        driver.findElement(email).sendKeys("natalya_pilchuk@yopmail.com123");
         LOGGER.info(String.format("Attempt to send password:%s", "8692421qweQWE"));
         driver.findElement(password).sendKeys("8692421qweQWE");
         LOGGER.info(String.format("Attempt to follow save button", saveButton));

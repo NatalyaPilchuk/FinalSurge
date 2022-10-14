@@ -9,6 +9,7 @@ import pages.AllSettingsPage;
 import pages.LoginPage;
 import pages.MainPage;
 import pages.EditeProfilePage;
+import utils.RetryAnalyser;
 
 
 public class SettingUpdateFirstNameTest extends BaseTest {
