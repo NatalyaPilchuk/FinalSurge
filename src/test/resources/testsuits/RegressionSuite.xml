@@ -11,8 +11,8 @@
             <class name="tests.CalculatorTest"></class>
             <class name="tests.SettingUpdateFirstNameTest"></class>
             <class name="tests.TrainingPlansTest"></class>
+            <class name="tests.RunningCalculatorTest"></class>
             <class name="tests.EditeSettingInputPhoneNumberTest"></class>
-            <class name="tests.SettingUpdateEmailTest"></class>
         </classes>
     </test>
 

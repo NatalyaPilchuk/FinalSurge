@@ -12,7 +12,7 @@ import utils.FakeMessageGenerator;
 public class EditeProfilePage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(EditeProfilePage.class.getName());
 
-    private By clickHere = By.linkText("click here");
+
     private By clickFemale = By.cssSelector("[id='female']");
     private By date = By.cssSelector("[id='BDay']");
     private By weight = By.cssSelector("[id='Weight']");
@@ -27,10 +27,6 @@ public class EditeProfilePage extends BasePage {
         super(driver);
     }
 
-    @Step("Follow the updating email")
-    public void clickHere() {
-        driver.findElement(clickHere).click();
-    }
 
     @Step("Input date, weight, city, zip, gender. Than save changes")
     public void fillingAllFields() {

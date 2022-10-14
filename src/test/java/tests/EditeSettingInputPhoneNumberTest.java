@@ -13,7 +13,7 @@ import utils.RetryAnalyser;
 public class EditeSettingInputPhoneNumberTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(EditeSettingInputPhoneNumberTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyser.class,description = "user try to input to the phone number field 12 letters instead of 10 digits")
+    @Test(description = "user try to input to the phone number field 12 letters instead of 10 digits")
     @Description("User try to input into phone number field 12 letters instead of 10 digits")
     public void inputPhoneNumberTest() {
         LoginPage loginPage = new LoginPage(driver);

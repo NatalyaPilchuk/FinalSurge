@@ -14,6 +14,7 @@ public class MainPage extends BasePage {
     private By viewCalendar = By.cssSelector("[class='btn btn-small btn-info ptip_s']");
     private By trainingPlans = By.xpath("//a[contains(@href, 'TrainingPlans.cshtml')]");
 
+    private By workoutCalculator = By.cssSelector("[class='icsw16-stop-watch']");
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -48,5 +49,11 @@ public class MainPage extends BasePage {
     public void clickTrainingPlans() {
         LOGGER.info("Follow to training plans");
         driver.findElement(trainingPlans).click();
+    }
+
+    @Step("Follow the workout calculator")
+    public void clickWorkoutCalculator() {
+        LOGGER.info("Follow to workout calculate");
+        driver.findElement(workoutCalculator).click();
     }
 }

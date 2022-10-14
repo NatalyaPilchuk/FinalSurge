@@ -32,6 +32,10 @@ public class FakeMessageGenerator {
         return new Faker().numerify("##");
     }
 
+    public static String generateTime() {
+        return new Faker().numerify("#");
+    }
+
     public static Integer generateNumberFromTo() {
         return new Faker().random().nextInt(2, 5);
     }
@@ -40,21 +44,11 @@ public class FakeMessageGenerator {
         return new Faker().name().firstName();
     }
 
-    public static String generateDistance() {
-        return String.valueOf(new Faker().number().randomNumber());
-    }
 
     public static String generateCaloricDistance() {
         return new Faker().numerify("##");
     }
 
-    public static String generateMoney() {
-        return String.valueOf(new Faker().number().randomNumber());
-    }
-
-    public static String generateNotes() {
-        return new Faker().harryPotter().character();
-    }
 
     public static String generateZipCode() {
         return new Faker().address().zipCode();
