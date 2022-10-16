@@ -38,6 +38,4 @@ public class RegisterTest extends BaseTest {
         LOGGER.info("Check if  warning message is displayed");
         Assert.assertTrue(loginPage.isWarningMessageDisplayed(), "there isn't a warning message");
     }
-
-
 }

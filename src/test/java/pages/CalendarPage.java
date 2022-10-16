@@ -13,13 +13,13 @@ import java.util.List;
 
 public class CalendarPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(CalendarPage.class.getName());
-    private By quickAdd = By.cssSelector("[id='QuickAddToggle']");
-    private By date = By.cssSelector("[id='WorkoutDate']");
-    private By selectActivity = By.cssSelector("[id='ActivityType']");
-    private By workoutName = By.cssSelector("[id='Name']");
+    private By quickAdd = By.id("QuickAddToggle");
+    private By date = By.id("WorkoutDate");
+    private By selectActivity = By.id("ActivityType");
+    private By workoutName = By.id("Name");
     private String workoutNameAdd = FakeMessageGenerator.generateBrand();
     private By workoutDescription = By.cssSelector("[name='Desc']");
-    private By saveButton = By.cssSelector("[id='saveButton']");
+    private By saveButton = By.id("saveButton");
     private By workoutNameCalendar = By.xpath("//span[contains(@class,'muted')]//strong");
     private By weekButton = By.xpath("//div[@class='fc-header-left']//span[1]//span[@class='fc-button-content']");
 
@@ -37,7 +37,7 @@ public class CalendarPage extends BasePage {
     public void inputDate() {
         LOGGER.info(String.format("Attempt to send date: %s", "10/11/2022"));
         driver.findElement(date).clear();
-        driver.findElement(date).sendKeys("10/11/2022");
+        driver.findElement(date).sendKeys("10/20/2022");
     }
 
     @Step("Choose sport activity")
@@ -86,6 +86,4 @@ public class CalendarPage extends BasePage {
         return actualElement;
 
     }
-
-
 }

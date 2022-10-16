@@ -39,6 +39,5 @@ public class SettingUpdateFirstNameTest extends BaseTest {
         editeProfilePage.clickSaveButton();
         LOGGER.info(String.format("Check if expected result and actual name are the same:%s=%s", editeProfilePage.getText(), "Name: Natasha Pilchuk"));
         Assert.assertEquals(editeProfilePage.getText(), "Name: Natasha Pilchuk", "the first name isn't update");
-
     }
 }

@@ -44,11 +44,13 @@ public class FakeMessageGenerator {
         return new Faker().name().firstName();
     }
 
-
     public static String generateCaloricDistance() {
         return new Faker().numerify("##");
     }
 
+    public static String generateTwoDigitNumber() {
+        return new Faker().numerify("##");
+    }
 
     public static String generateZipCode() {
         return new Faker().address().zipCode();

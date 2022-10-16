@@ -11,11 +11,11 @@ import org.openqa.selenium.WebDriver;
 
 public class CreateNewAccountPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(CreateNewAccountPage.class.getName());
-    private By firstName = By.cssSelector("[id='create_first']");
-    private By lastName = By.cssSelector("[id='create_last']");
-    private By emailAddress = By.cssSelector("[id='create_email']");
-    private By password = By.cssSelector("[id='password_meter']");
-    private By confirmPassword = By.cssSelector("[id='create_passwordmatch']");
+    private By firstName = By.id("create_first");
+    private By lastName = By.id("create_last");
+    private By emailAddress = By.id("create_email");
+    private By password = By.id("password_meter");
+    private By confirmPassword = By.id("create_passwordmatch");
     private By createNewAccountButton = By.cssSelector("[type='submit']");
     private By warningMessage = By.cssSelector("[class='alert alert-error']");
 

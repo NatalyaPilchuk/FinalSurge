@@ -13,15 +13,15 @@ public class EditeProfilePage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(EditeProfilePage.class.getName());
 
 
-    private By clickFemale = By.cssSelector("[id='female']");
-    private By date = By.cssSelector("[id='BDay']");
-    private By weight = By.cssSelector("[id='Weight']");
-    private By selectCountry = By.cssSelector("[id='Country']");
-    private By city = By.cssSelector("[id='City']");
-    private By zip = By.cssSelector("[id='Zip']");
+    private By clickFemale = By.id("female");
+    private By date = By.id("BDay");
+    private By weight = By.id("Weight");
+    private By selectCountry = By.id("Country");
+    private By city = By.id("City");
+    private By zip = By.id("Zip");
     private By getTextName = By.xpath("//div[contains(@class,'span10')]//p[@class='formSep'][1]");
-    private By saveButton = By.cssSelector("[id='saveButtonProfile']");
-    private By firstName = By.cssSelector("[id='fname']");
+    private By saveButton = By.id("saveButtonProfile");
+    private By firstName = By.id("fname");
 
     public EditeProfilePage(WebDriver driver) {
         super(driver);
@@ -68,5 +68,4 @@ public class EditeProfilePage extends BasePage {
         LOGGER.info(String.format("Attempt to click save button", saveButton));
         driver.findElement(saveButton).click();
     }
-
 }

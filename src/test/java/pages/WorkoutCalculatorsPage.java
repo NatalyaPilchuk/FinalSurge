@@ -14,12 +14,12 @@ public class WorkoutCalculatorsPage extends BasePage {
 
 
     private By iframeWorkoutCalculators = By.cssSelector("[id='IntensityCalciFrame']");
-    private By checkMarathon = By.cssSelector("[id='MARATHON']");
+    private By checkMarathon = By.id("MARATHON");
 
-    private By hours = By.cssSelector("[id='TimeHH']");
-    private By minutes = By.cssSelector("[id='TimeMM']");
-    private By seconds = By.cssSelector("[id='TimeSS']");
-    private By calculateButton = By.cssSelector("[id='saveButtonSettings']");
+    private By hours = By.id("TimeHH");
+    private By minutes = By.id("TimeMM");
+    private By seconds = By.id("TimeSS");
+    private By calculateButton = By.id("saveButtonSettings");
     private By tables = By.cssSelector("[class='w-box w-box-green']");
 
     public WorkoutCalculatorsPage(WebDriver driver) {

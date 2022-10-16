@@ -45,7 +45,5 @@ public class AddWorkoutTest extends BaseTest {
         calendarPage.clickWeekButton();
         LOGGER.info(String.format("Check if actual workout name %s and expected workout name  %s are the same", calendarPage.getActualWorkoutName(), calendarPage.getExpectedWorkoutName()));
         Assert.assertEquals(calendarPage.getActualWorkoutName(), calendarPage.getExpectedWorkoutName(), "Actual workout name and expected workout name are differ");
-
-
     }
 }

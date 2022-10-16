@@ -13,9 +13,9 @@ public class CalculatorPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(CalculatorPage.class.getName());
     private By iframeElement = By.id("OtherCalciFrame");
     private By weight = By.id("Weight");
-    private By height = By.cssSelector("[id='HeightInchCent']");
+    private By height = By.id("HeightInchCent");
     private By age = By.id("Age");
-    private By gender = By.cssSelector("[id='optionsRadios6']");
+    private By gender = By.id("optionsRadios6");
     private By distance = By.id("RunDist");
     private By calculateButton = By.id("saveButtonSettings");
     private By greenMessageCaloricNeeds = By.xpath("//div[contains(@class,'main-wrapper')]//div[@class='w-box w-box-green']");
@@ -26,24 +26,23 @@ public class CalculatorPage extends BasePage {
 
     @Step("Input Weight")
     public void inputWeight() {
-        LOGGER.info(String.format("Attempt to send weight:%s", "30"));
+        LOGGER.info(String.format("Attempt to send weight:%s",FakeMessageGenerator.generateTwoDigitNumber()));
         WebElement element = driver.findElement(iframeElement);
         driver.switchTo().frame(element);
         WebElement myWeight = driver.findElement(weight);
-        myWeight.sendKeys("30");
-
+        myWeight.sendKeys(FakeMessageGenerator.generateTwoDigitNumber());
     }
 
     @Step("Input Height")
     public void inputHeight() {
-        LOGGER.info(String.format("Attempt to send height:%s", "30"));
-        driver.findElement(height).sendKeys("30");
+        LOGGER.info(String.format("Attempt to send height:%s",FakeMessageGenerator.generateTwoDigitNumber()));
+        driver.findElement(height).sendKeys(FakeMessageGenerator.generateTwoDigitNumber());
     }
 
     @Step("Input Age")
     public void inputAge() {
-        LOGGER.info(String.format("Attempt to send age:%s", "30"));
-        driver.findElement(age).sendKeys("30");
+        LOGGER.info(String.format("Attempt to send age:%s",FakeMessageGenerator.generateTwoDigitNumber()));
+        driver.findElement(age).sendKeys(FakeMessageGenerator.generateTwoDigitNumber());
     }
 
     @Step("Choose gender")
@@ -69,6 +68,4 @@ public class CalculatorPage extends BasePage {
         LOGGER.info("Attempt to calculate caloric needs message displayed");
         return driver.findElement(greenMessageCaloricNeeds).isDisplayed();
     }
-
-
 }
