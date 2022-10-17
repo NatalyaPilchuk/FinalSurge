@@ -26,23 +26,27 @@ public class CalculatorPage extends BasePage {
 
     @Step("Input Weight")
     public void inputWeight() {
-        LOGGER.info(String.format("Attempt to send weight:%s",FakeMessageGenerator.generateTwoDigitNumber()));
+        String weightInput = FakeMessageGenerator.generateTwoDigitNumber();
+        LOGGER.info(String.format("Attempt to send weight:%s", weightInput));
         WebElement element = driver.findElement(iframeElement);
         driver.switchTo().frame(element);
         WebElement myWeight = driver.findElement(weight);
-        myWeight.sendKeys(FakeMessageGenerator.generateTwoDigitNumber());
+        myWeight.sendKeys(weightInput);
     }
+
 
     @Step("Input Height")
     public void inputHeight() {
-        LOGGER.info(String.format("Attempt to send height:%s",FakeMessageGenerator.generateTwoDigitNumber()));
-        driver.findElement(height).sendKeys(FakeMessageGenerator.generateTwoDigitNumber());
+        String heightInput = FakeMessageGenerator.generateTwoDigitNumber();
+        LOGGER.info(String.format("Attempt to send height:%s", heightInput));
+        driver.findElement(height).sendKeys(heightInput);
     }
 
     @Step("Input Age")
     public void inputAge() {
-        LOGGER.info(String.format("Attempt to send age:%s",FakeMessageGenerator.generateTwoDigitNumber()));
-        driver.findElement(age).sendKeys(FakeMessageGenerator.generateTwoDigitNumber());
+        String ageInput = FakeMessageGenerator.generateTwoDigitNumber();
+        LOGGER.info(String.format("Attempt to send age:%s", ageInput));
+        driver.findElement(age).sendKeys(ageInput);
     }
 
     @Step("Choose gender")
@@ -53,8 +57,9 @@ public class CalculatorPage extends BasePage {
 
     @Step("Input Distance")
     public void inputDistance() {
-        LOGGER.info(String.format("Attempt to choose distance:%s", FakeMessageGenerator.generateCaloricDistance()));
-        driver.findElement(distance).sendKeys(FakeMessageGenerator.generateCaloricDistance());
+        String distanceInput = FakeMessageGenerator.generateCaloricDistance();
+        LOGGER.info(String.format("Attempt to send distance:%s", distanceInput));
+        driver.findElement(distance).sendKeys(distanceInput);
     }
 
     @Step("Click calculate button")
