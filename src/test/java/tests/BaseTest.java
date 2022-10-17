@@ -1,8 +1,8 @@
 package tests;
 
-import factorymanager.DriverFactory;
-import factorymanager.DriverManager;
-import factorymanager.DriverType;
+import drivermanager.DriverFactory;
+import drivermanager.DriverManager;
+import drivermanager.DriverType;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import utils.TestListeners;
