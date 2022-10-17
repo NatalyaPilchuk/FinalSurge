@@ -29,14 +29,18 @@ public class WorkoutCalculatorsPage extends BasePage {
 
     @Step("Input Fields")
     public void inputFields() {
-        LOGGER.info(String.format("Attempt to send hours:%s", FakeMessageGenerator.generateTime()));
-        WebElement element = driver.findElement(iframeWorkoutCalculators);
-        driver.switchTo().frame(element);
-        driver.findElement(hours).sendKeys(FakeMessageGenerator.generateTime());
-        LOGGER.info(String.format("Attempt to send minutes:%s", FakeMessageGenerator.generateTime()));
-        driver.findElement(minutes).sendKeys(FakeMessageGenerator.generateTime());
-        LOGGER.info(String.format("Attempt to send seconds:%s", FakeMessageGenerator.generateTime()));
-        driver.findElement(seconds).sendKeys(FakeMessageGenerator.generateTime());
+        String hoursInput = FakeMessageGenerator.generateTime();
+        LOGGER.info(String.format("Attempt to send hours:%s", hoursInput));
+        WebElement element1 = driver.findElement(iframeWorkoutCalculators);
+        driver.switchTo().frame(element1);
+        WebElement hoursMarathon = driver.findElement(hours);
+        hoursMarathon.sendKeys(hoursInput);
+        String minutesInput = FakeMessageGenerator.generateTime();
+        LOGGER.info(String.format("Attempt to send minutes:%s", minutesInput));
+        driver.findElement(minutes).sendKeys(minutesInput);
+        String secondsInput = FakeMessageGenerator.generateTime();
+        LOGGER.info(String.format("Attempt to send seconds:%s", secondsInput));
+        driver.findElement(seconds).sendKeys(secondsInput);
         LOGGER.info("Attempt choose marathon");
         driver.findElement(checkMarathon).click();
         LOGGER.info("Attempt to click calculate button");
