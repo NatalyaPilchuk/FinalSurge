@@ -29,7 +29,7 @@ public class AllSettingsPage extends BasePage {
 
     @Step("Warning message isn't displayed")
     public boolean isWarningMessageDisplayed() {
-        LOGGER.info("Attempt the warning message is displayed");
+        LOGGER.info("Attempt the warning message");
         return driver.findElement(warningMessage).isDisplayed();
     }
 }
