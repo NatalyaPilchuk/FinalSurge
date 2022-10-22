@@ -26,7 +26,7 @@ public class CalculatorPage extends BasePage {
 
     @Step("Input Weight")
     public void inputWeight() {
-        String weightInput = FakeMessageGenerator.generateTwoDigitNumber();
+        String weightInput = String.valueOf(FakeMessageGenerator.generateWeight());
         LOGGER.info(String.format("Attempt to send weight:%s", weightInput));
         WebElement element = driver.findElement(iframeElement);
         driver.switchTo().frame(element);
@@ -37,7 +37,7 @@ public class CalculatorPage extends BasePage {
 
     @Step("Input Height")
     public void inputHeight() {
-        String heightInput = FakeMessageGenerator.generateTwoDigitNumber();
+        String heightInput = String.valueOf(FakeMessageGenerator.generateHeight());
         LOGGER.info(String.format("Attempt to send height:%s", heightInput));
         driver.findElement(height).sendKeys(heightInput);
     }

@@ -2,7 +2,6 @@ package utils;
 
 import com.github.javafaker.Faker;
 
-
 public class FakeMessageGenerator {
     public static String generateFirstName() {
         return new Faker().name().firstName();
@@ -16,9 +15,7 @@ public class FakeMessageGenerator {
         return new Faker().numerify("######");
     }
 
-    public static String generateDescription() {
-        return new Faker().harryPotter().book();
-    }
+    public static String generateDescription() { return new Faker().harryPotter().book(); }
 
     public static String generateCity() {
         return new Faker().address().city();
@@ -28,16 +25,21 @@ public class FakeMessageGenerator {
         return new Faker().internet().emailAddress();
     }
 
-    public static String generateWeight() {
-        return new Faker().numerify("##");
+    public static Integer generateWeight() {
+        return new Faker().random().nextInt(30, 500);
     }
-
-    public static String generateTime() {
-        return new Faker().numerify("#");
+    public static Integer generateHeight() {
+        return new Faker().random().nextInt(1, 86);
     }
 
     public static Integer generateNumberFromTo() {
         return new Faker().random().nextInt(2, 5);
+    }
+    public static Integer generateHours() {
+        return new Faker().random().nextInt(2, 7);
+    }
+    public static Integer generateMinutesSeconds() {
+        return new Faker().random().nextInt(1, 59);
     }
 
     public static String generateBrand() {

@@ -29,16 +29,16 @@ public class WorkoutCalculatorsPage extends BasePage {
 
     @Step("Input Fields")
     public void inputFields() {
-        String hoursInput = FakeMessageGenerator.generateTime();
+        String hoursInput = String.valueOf(FakeMessageGenerator.generateHours());
         LOGGER.info(String.format("Attempt to send hours:%s", hoursInput));
         WebElement element1 = driver.findElement(iframeWorkoutCalculators);
         driver.switchTo().frame(element1);
         WebElement hoursMarathon = driver.findElement(hours);
         hoursMarathon.sendKeys(hoursInput);
-        String minutesInput = FakeMessageGenerator.generateTime();
+        String minutesInput = String.valueOf(FakeMessageGenerator.generateMinutesSeconds());
         LOGGER.info(String.format("Attempt to send minutes:%s", minutesInput));
         driver.findElement(minutes).sendKeys(minutesInput);
-        String secondsInput = FakeMessageGenerator.generateTime();
+        String secondsInput = String.valueOf(FakeMessageGenerator.generateMinutesSeconds());
         LOGGER.info(String.format("Attempt to send seconds:%s", secondsInput));
         driver.findElement(seconds).sendKeys(secondsInput);
         LOGGER.info("Attempt choose marathon");

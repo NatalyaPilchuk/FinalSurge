@@ -37,7 +37,8 @@ public class EditeProfilePage extends BasePage {
         driver.findElement(date).sendKeys("02/03/1990");
         LOGGER.info(String.format("Attempt to send the weight:%s", FakeMessageGenerator.generateWeight()));
         driver.findElement(weight).clear();
-        driver.findElement(weight).sendKeys(FakeMessageGenerator.generateWeight());
+        String weightInput = String.valueOf(FakeMessageGenerator.generateWeight());
+        driver.findElement(weight).sendKeys(weightInput);
         LOGGER.info("Attempt to choose the country");
         WebElement dropdownList = driver.findElement(selectCountry);
         Select selectOption = new Select(dropdownList);

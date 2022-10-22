@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
     <groupId>groupId</groupId>
     <artifactId>FinalSurge</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -16,10 +16,7 @@
         <github.javafaker.version>1.0.2</github.javafaker.version>
         <github.bonigarcia.version>3.8.1</github.bonigarcia.version>
         <aspectj.version>1.9.7</aspectj.version>
-
         <compilerplugin.version>3.8.1</compilerplugin.version>
-        <aspectj.version>1.9.8</aspectj.version>
-
         <suiteXmlFile>src/test/resources/testsuits/RegressionSuite.xml</suiteXmlFile>
     </properties>
     <dependencies>
