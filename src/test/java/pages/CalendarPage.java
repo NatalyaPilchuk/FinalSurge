@@ -35,7 +35,7 @@ public class CalendarPage extends BasePage {
 
     @Step("Input date")
     public void inputDate() {
-        LOGGER.info(String.format("Attempt to send date: %s", "10/11/2022"));
+        LOGGER.info(String.format("Attempt to send date: %s", "11/05/2022"));
         driver.findElement(date).clear();
         driver.findElement(date).sendKeys("10/25/2022");
     }
