@@ -44,7 +44,7 @@ public class CalculatorPage extends BasePage {
 
     @Step("Input Age")
     public void inputAge() {
-        String ageInput = FakeMessageGenerator.generateTwoDigitNumber();
+        String ageInput = String.valueOf(FakeMessageGenerator.generateAge());
         LOGGER.info(String.format("Attempt to send age:%s", ageInput));
         driver.findElement(age).sendKeys(ageInput);
     }
